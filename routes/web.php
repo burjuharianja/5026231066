@@ -32,4 +32,44 @@ Route::get('blog', function () {
 
 Route::get('/hello', [Coba::class, 'helloworld']);
 
+Route::get('/bootstrap1', function () {
+    return view('bootstrap1');
+});
+
+Route::get('/bootstrap2', function () {
+    return view('bootstrap2');
+});
+
+Route::get('/buttons', function () {
+    return view('buttons');
+});
+
+Route::get('/js1', function () {
+    return view('js1');
+});
+
+Route::get('/js2', function () {
+    return view('js2');
+});
+
+Route::get('/layout', function () {
+    return view('layout');
+});
+
+Route::get('/link', function () {
+    return view('link');
+});
+
+Route::get('/linktree', function () {
+    return view('linktree');
+});
+
+Route::get('/pertama', function () {
+    return view('pertama');
+});
+
+Route::get('/frontend', function () {
+    return view('frontend');
+});
+
 ?>

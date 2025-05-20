@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(ellipse at center, #0f2027, #203a43, #2c5364);
+    color: #00ffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 40px;
+    font-size: 3em;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.card {
+    display: block;
+    padding: 30px;
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid #00ffff;
+    border-radius: 12px;
+    color: #00ffff;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #00ffff40;
+}
+
+.card:hover {
+    background-color: #00ffff;
+    color: #000;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
+}
