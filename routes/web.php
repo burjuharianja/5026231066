@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Coba;
+use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\BlogController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +14,7 @@ use App\Http\Controllers\Coba;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+//route bawaan
 Route::get('/', function () {
     return view('welcome');
 });
@@ -32,6 +34,8 @@ Route::get('blog', function () {
 
 Route::get('/hello', [Coba::class, 'helloworld']);
 
+
+//route untuk link tugas
 Route::get('/bootstrap1', function () {
     return view('bootstrap1');
 });
@@ -72,4 +76,15 @@ Route::get('/frontend', function () {
     return view('frontend');
 });
 
+//route Pegawai
+Route::get('dosen', [Coba::class, 'index']);
+Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
+Route::get('/formulir', [PegawaiController::class, 'formulir']);  //halaman isian formulir
+Route::post('/formulir/proses', [PegawaiController::class, 'proses']); //action untuk mengirim data formulir
+
+
+// route blog
+Route::get('/blog', [BlogController::class, 'home']);
+Route::get('/blog/tentang', [BlogController::class, 'tentang']);
+Route::get('/blog/kontak', [BlogController::class, 'kontak']);
 ?>
