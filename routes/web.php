@@ -6,6 +6,8 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\TugasCRUD;
+use App\Http\Controllers\KaryawanController;
+use App\Http\Controllers\TrafficController  ;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -114,4 +116,15 @@ Route::post('/plastik/update/', [TugasCRUD::class, 'update']);
 Route::get('/plastik/hapus/{id}', [TugasCRUD::class, 'hapus']);
 Route::get('/plastik/cari', [TugasCRUD::class, 'cari']);
 
+//route untuk CRUD karyawan LATIHAN 3
+Route::get('/karyawan', [KaryawanController::class, 'index']);
+Route::get('/karyawan/tambah', [KaryawanController::class, 'tambah']);
+Route::post('/karyawan/store', [KaryawanController::class, 'store']);
+Route::get('/karyawan/edit/{id}', [KaryawanController::class, 'edit']);
+Route::post('/karyawan/update/', [KaryawanController::class, 'update']);
+Route::get('/karyawan/hapus/{id}', [KaryawanController::class, 'hapus']);
+Route::get('/karyawan/cari', [KaryawanController::class, 'cari']);
+
+//route untuk LATIHAN 2
+Route::get('/pagecounter', [TrafficController::class, 'index']);
 ?>
