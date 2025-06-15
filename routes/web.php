@@ -8,6 +8,8 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\TugasCRUD;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\TrafficController  ;
+use App\Http\Controllers\KeranjangBelanjaController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -127,4 +129,12 @@ Route::get('/karyawan/cari', [KaryawanController::class, 'cari']);
 
 //route untuk LATIHAN 2
 Route::get('/pagecounter', [TrafficController::class, 'index']);
+
+//route keranjang belanja
+
+Route::get('/keranjangbelanja', [KeranjangBelanjaController::class, 'indexkeranjangbelanja']);
+Route::get('/keranjangbelanja/belikeranjangbelanja/{id}', [KeranjangBelanjaController::class, 'belikeranjangbelanja']);
+Route::get('/keranjangbelanja/batalkeranjangbelanja/{id}', [KeranjangBelanjaController::class, 'batalkeranjangbelanja']);
+Route::post('/keranjangbelanja/storekeranjangbelanja', [KeranjangBelanjaController::class, 'storekeranjangbelanja']);
+Route::post('/keranjangbelanja/updatekeranjangbelanja', [KeranjangBelanjaController::class, 'updatekeranjangbelanja']);
 ?>
