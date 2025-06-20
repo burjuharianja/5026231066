@@ -9,6 +9,7 @@ use App\Http\Controllers\TugasCRUD;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\TrafficController  ;
 use App\Http\Controllers\KeranjangBelanjaController;
+use App\Http\Controllers\NewKaryawanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -130,11 +131,19 @@ Route::get('/karyawan/cari', [KaryawanController::class, 'cari']);
 //route untuk LATIHAN 2
 Route::get('/pagecounter', [TrafficController::class, 'index']);
 
-//route keranjang belanja
 
-Route::get('/keranjangbelanja', [KeranjangBelanjaController::class, 'indexkeranjangbelanja']);
-Route::get('/keranjangbelanja/belikeranjangbelanja/{id}', [KeranjangBelanjaController::class, 'belikeranjangbelanja']);
-Route::get('/keranjangbelanja/batalkeranjangbelanja/{id}', [KeranjangBelanjaController::class, 'batalkeranjangbelanja']);
-Route::post('/keranjangbelanja/storekeranjangbelanja', [KeranjangBelanjaController::class, 'storekeranjangbelanja']);
-Route::post('/keranjangbelanja/updatekeranjangbelanja', [KeranjangBelanjaController::class, 'updatekeranjangbelanja']);
+//route untuk tugas 2: keranjang belanja
+Route::get('/keranjangbelanja', [KeranjangBelanjaController::class,'index']);
+Route::get('/keranjangbelanja/tambah', [KeranjangBelanjaController::class,'tambah']);
+Route::post('/keranjangbelanja/store', [KeranjangBelanjaController::class,'store']);
+Route::get('/keranjangbelanja/edit/{id}', [KeranjangBelanjaController::class,'edit']);
+Route::post('/keranjangbelanja/update', [KeranjangBelanjaController::class,'update']);
+Route::get('/keranjangbelanja/hapus/{id}', [KeranjangBelanjaController::class,'hapus']);
+
+//route untuk EAS
+Route::get('/newkaryawan', [NewKaryawanController::class,'index']);
+Route::get('/newkaryawan/tambah', [NewKaryawanController::class,'tambah']);
+Route::post('/newkaryawan/store', [NewKaryawanController::class,'store']);
+Route::post('/newkaryawan/update', [NewKaryawanController::class,'update']);
+Route::get('/newkaryawan/hapus/{id}', [NewKaryawanController::class,'hapus']);
 ?>
